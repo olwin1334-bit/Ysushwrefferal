@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://www.gstatic.com"/>
+<link rel="dns-prefetch" href="https://www.gstatic.com"/>
+<link rel="preconnect" href="https://firestore.googleapis.com"/>
+<link rel="dns-prefetch" href="https://firestore.googleapis.com"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<title>ZenithCrypto — REFERRAL</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+<script>(function(){var _x=atob('eyJhcGlLZXkiOiJBSXphU3lDSFJ3cV9EMFdtODNmSTZNcEVwT20tZjlJaXBsZzdUNVEiLCJhdXRoRG9tYWluIjoidGl0YW4tYXBleC1tdWx0aXBsYXllci5maXJlYmFzZWFwcC5jb20iLCJwcm9qZWN0SWQiOiJ0aXRhbi1hcGV4LW11bHRpcGxheWVyIiwic3RvcmFnZUJ1Y2tldCI6InRpdGFuLWFwZXgtbXVsdGlwbGF5ZXIuZmlyZWJhc2VzdG9yYWdlLmFwcCIsIm1lc3NhZ2luZ1NlbmRlcklkIjoiNDEzODUwMDczNDgxIiwiYXBwSWQiOiIxOjQxMzg1MDA3MzQ4MTp3ZWI6ODM0ZGVmNTlmNDA3OTRkMjE4MDk1OCIsImRhdGFiYXNlVVJMIjoiaHR0cHM6Ly90aXRhbi1hcGV4LW11bHRpcGxheWVyLWRlZmF1bHQtcnRkYi5hc2lhLXNvdXRoZWFzdDEuZmlyZWJhc2VkYXRhYmFzZS5hcHAifQ==');try{window._FC=JSON.parse(_x);}catch(e){}})();
+var db=null,auth=null,rtdb=null,FS=null,G={};</script>
+<script>(function(){var _t=null;window._showOffline=function(m){if(document.getElementById('_zco'))return;var d=document.createElement('div');d.id='_zco';d.style.cssText='position:fixed;inset:0;z-index:99999;background:#04060e;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:30px;text-align:center;font-family:Orbitron,monospace';d.innerHTML='<div style="font-size:3rem">📡</div><div style="font-size:.9rem;font-weight:900;color:#eaecf0;letter-spacing:2px">CONNECTION LOST</div><div style="font-size:.5rem;color:#6c7a96;line-height:2;max-width:260px">'+(m||'No internet connection')+'<br><span id="_zco_cd">Retrying in 5s...</span></div><button onclick="window._retryNow&&window._retryNow()" style="padding:11px 26px;border-radius:10px;border:1.5px solid rgba(79,142,247,.4);background:rgba(79,142,247,.1);color:#4f8ef7;font-size:.52rem;cursor:pointer;font-weight:700;font-family:Orbitron,monospace">RETRY NOW</button>';document.body.appendChild(d);var c=5;_t=setInterval(function(){c--;var r=document.getElementById('_zco_cd');if(r)r.textContent=c>0?'Retrying in '+c+'s...':'Retrying...';if(c<=0){clearInterval(_t);window._retryNow&&window._retryNow();}},1000);};window._hideOffline=function(){var d=document.getElementById('_zco');if(d)d.remove();if(_t)clearInterval(_t);};window.addEventListener('online',function(){window._hideOffline();});window.addEventListener('offline',function(){window._showOffline('Internet connection lost.');});window.addEventListener('error',function(e){e.preventDefault();return true;},true);window.addEventListener('unhandledrejection',function(e){e.preventDefault();});})();</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#04060e;--s1:#080d18;--s2:#0c1220;--s3:#111929;--a:#4f8ef7;--gold:#e8b84b;--green:#0ecb81;--red:#f6465d;--purple:#7c5df7;--t1:#eaecf0;--t2:#6c7a96;--t3:#2d3a55;--fhd:'Orbitron',monospace;--fmono:'JetBrains Mono',monospace;--topH:54px}
+html,body{visibility:visible;height:100%;background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif}
+#topbar{height:var(--topH);background:rgba(7,9,15,.96);border-bottom:1px solid rgba(0,212,255,.12);display:flex;align-items:center;padding:0 14px;gap:8px;position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px)}
+.back{width:34px;height:34px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.title{font-family:var(--fhd);font-size:.72rem;font-weight:900;flex:1;letter-spacing:2px;background:linear-gradient(90deg,var(--green),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#main{margin-top:var(--topH);padding-bottom:60px}
+.hero{padding:28px 16px 20px;background:radial-gradient(ellipse 100% 70% at 50% 0%,rgba(14,203,129,.1),transparent 60%),var(--s1);border-bottom:1px solid rgba(14,203,129,.12);text-align:center}
+.code-box{margin:14px;background:linear-gradient(135deg,rgba(14,203,129,.08),rgba(79,142,247,.06));border:1.5px solid rgba(14,203,129,.25);border-radius:16px;padding:20px;text-align:center}
+.code-val{font-family:var(--fmono);font-size:1.6rem;font-weight:900;color:var(--green);letter-spacing:6px;margin:8px 0 14px}
+.copy-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:10px;border:1.5px solid rgba(14,203,129,.4);background:rgba(14,203,129,.1);color:var(--green);font-family:var(--fhd);font-size:.52rem;font-weight:700;cursor:pointer}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 14px 12px}
+.sc{background:var(--s1);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px;text-align:center}
+.sl{font-family:var(--fhd);font-size:.32rem;color:var(--t3);letter-spacing:1.5px;margin-bottom:5px}
+.sv{font-family:var(--fmono);font-size:.9rem;font-weight:900}
+.sec-title{font-family:var(--fhd);font-size:.44rem;color:var(--t3);letter-spacing:2px;padding:10px 14px 6px}
+.rw{background:var(--s1);border:1px solid rgba(255,255,255,.06);border-radius:12px;margin:0 14px 8px;padding:14px;display:flex;align-items:center;gap:12px}
+.enter-box{margin:0 14px 12px;background:var(--s1);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px}
+.enter-row{display:flex;gap:8px;margin-top:8px}
+.ei{flex:1;background:var(--s2);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;color:var(--t1);font-family:var(--fmono);font-size:.76rem;padding:11px 13px;outline:none}
+.ei:focus{border-color:var(--a)}
+.eb{padding:11px 16px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--a),var(--purple));color:#fff;font-family:var(--fhd);font-size:.48rem;font-weight:900;cursor:pointer}
+.hrow{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.04)}
+.hav{width:36px;height:36px;border-radius:50%;background:var(--s3);display:flex;align-items:center;justify-content:center;font-family:var(--fhd);font-size:.5rem;font-weight:700;border:1.5px solid rgba(14,203,129,.2);color:var(--green)}
+.empty{text-align:center;padding:30px;color:var(--t3);font-family:var(--fhd);font-size:.52rem}
+.spinner{width:22px;height:22px;border:2px solid rgba(14,203,129,.15);border-top-color:var(--green);border-radius:50%;animation:sp .8s linear infinite;margin:24px auto}
+@keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="back" onclick="history.back()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+  <div class="title">🤝 REFERRAL</div>
+</div>
+<div id="main">
+  <div class="hero">
+    <div style="font-size:3rem;margin-bottom:8px">🤝</div>
+    <div style="font-family:var(--fhd);font-size:1rem;font-weight:900;background:linear-gradient(135deg,var(--green),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:3px">INVITE &amp; EARN</div>
+    <div style="font-family:var(--fhd);font-size:.42rem;color:var(--t3);letter-spacing:2px;margin-top:4px">SHARE CODE • EARN $4 + 10 ZENZ PER FRIEND</div>
+  </div>
+  <div class="code-box">
+    <div style="font-family:var(--fhd);font-size:.38rem;color:var(--t3);letter-spacing:2px">YOUR REFERRAL CODE</div>
+    <div class="code-val" id="ref-code">ZNC-———</div>
+    <button class="copy-btn" onclick="copyRefCode()">📋 COPY CODE</button>
+  </div>
+  <div class="stats">
+    <div class="sc"><div class="sl">TOTAL EARNED</div><div class="sv" id="ref-earned" style="color:var(--green)">$0.00</div></div>
+    <div class="sc"><div class="sl">REFERRALS</div><div class="sv" id="ref-count" style="color:var(--a)">0</div></div>
+    <div class="sc"><div class="sl">ZENZ EARNED</div><div class="sv" id="ref-zenz" style="color:var(--gold)">0</div></div>
+    <div class="sc"><div class="sl">LIFETIME %</div><div class="sv" id="ref-life" style="color:var(--purple)">—</div></div>
+  </div>
+  <div class="sec-title">HOW IT WORKS</div>
+  <div class="rw"><span style="font-size:1.6rem">🎯</span><div style="flex:1"><div style="font-family:var(--fhd);font-size:.52rem;font-weight:700;margin-bottom:3px">Friend Signs Up</div><div style="font-size:.5rem;color:var(--t2)">Instantly when they register with your code</div></div><div style="font-family:var(--fmono);font-size:.66rem;font-weight:900;color:var(--green)">+$4 +10Z</div></div>
+  <div class="rw"><span style="font-size:1.6rem">⭐</span><div style="flex:1"><div style="font-family:var(--fhd);font-size:.52rem;font-weight:700;margin-bottom:3px">Friend Hits LV7</div><div style="font-size:.5rem;color:var(--t2)">Bonus when your referred friend reaches Level 7</div></div><div style="font-family:var(--fmono);font-size:.66rem;font-weight:900;color:var(--a)">+$1 +10Z</div></div>
+  <div class="rw"><span style="font-size:1.6rem">♾️</span><div style="flex:1"><div style="font-family:var(--fhd);font-size:.52rem;font-weight:700;margin-bottom:3px">Lifetime Earnings</div><div style="font-size:.5rem;color:var(--t2)">10% of referred friend's future earnings, forever</div></div><div style="font-family:var(--fmono);font-size:.66rem;font-weight:900;color:var(--purple)">10%</div></div>
+  <div id="enter-wrap">
+    <div class="sec-title">ENTER A FRIEND'S CODE</div>
+    <div class="enter-box">
+      <div style="font-family:var(--fhd);font-size:.4rem;color:var(--t3)">Got a code? Enter it once to give your friend a reward</div>
+      <div class="enter-row">
+        <input class="ei" id="ref-input" placeholder="ZNC-XXXXXX" maxlength="10" oninput="this.value=this.value.toUpperCase()"/>
+        <button class="eb" onclick="submitRefCode()">APPLY</button>
+      </div>
+    </div>
+  </div>
+  <div class="sec-title">YOUR REFERRALS</div>
+  <div id="ref-history" style="background:var(--s1);margin:0 14px;border:1px solid rgba(255,255,255,.05);border-radius:12px;overflow:hidden"><div class="spinner"></div></div>
+</div>
+<script>
+var ZCS={restore:function(){try{var p=new URLSearchParams(window.location.search);var uid=p.get('uid');var s=p.get('s');if(s)try{Object.assign(G,JSON.parse(decodeURIComponent(s)));}catch(e){}if(uid&&uid!=='guest')G.uid=uid;}catch(e){}},sendReady:function(pg){try{if(window.parent!==window)window.parent.postMessage({type:'ZC_READY',page:pg},'*');}catch(e){}}};
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function toast(msg,type){var t=document.createElement('div');t.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:'+(type==='error'?'#f6465d':type==='success'?'#0ecb81':'#4f8ef7')+';color:#fff;padding:10px 22px;border-radius:10px;font-family:Orbitron,monospace;font-size:.56rem;z-index:99999;font-weight:700';t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},2800);}
+function save(data){if(!db||!G.uid)return;db.collection('players').doc(G.uid).update(data).catch(function(){});}
+function getRefCode(){if(!G.uid)return 'ZNC-LOGIN';return 'ZNC-'+(G.uid.slice(-6).toUpperCase());}
+function copyRefCode(){var code=getRefCode();if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast('Code copied!','success');});return;}var inp=document.createElement('input');inp.value=code;document.body.appendChild(inp);inp.select();try{document.execCommand('copy');toast('Code copied!','success');}catch(e){}inp.remove();}
+function renderPage(){
+  if(!G.uid){document.getElementById('ref-code').textContent='LOG IN FIRST';return;}
+  document.getElementById('ref-code').textContent=getRefCode();
+  document.getElementById('ref-earned').textContent='$'+((G.refEarned||0).toFixed(2));
+  document.getElementById('ref-count').textContent=G.refCount||0;
+  document.getElementById('ref-zenz').textContent=G.refZenz||0;
+  document.getElementById('ref-life').textContent=(G.lifetimeRef?'ACTIVE':'—');
+  if(G.usedRefCode){var ew=document.getElementById('enter-wrap');if(ew)ew.innerHTML='<div style="margin:10px 14px;padding:12px;background:rgba(14,203,129,.07);border:1px solid rgba(14,203,129,.18);border-radius:10px;font-family:Orbitron,monospace;font-size:.44rem;color:var(--green)">✓ Referral code already applied</div>';}
+  loadHistory();
+}
+function loadHistory(){
+  var el=document.getElementById('ref-history');if(!el)return;
+  if(!db||!G.uid){el.innerHTML='<div class="empty">Log in to view</div>';return;}
+  db.collection('referrals').where('referrerId','==',G.uid).orderBy('ts','desc').limit(20).get()
+    .then(function(snap){
+      el.innerHTML='';
+      if(snap.empty){el.innerHTML='<div class="empty">No referrals yet — share your code!</div>';return;}
+      snap.forEach(function(doc){
+        var r=doc.data();var row=document.createElement('div');row.className='hrow';
+        row.innerHTML='<div class="hav">'+esc((r.friendName||'?').slice(0,2).toUpperCase())+'</div>'
+          +'<div style="flex:1"><div style="font-family:var(--fhd);font-size:.52rem;color:var(--t1)">'+esc(r.friendName||'Friend')+'</div>'
+          +'<div style="font-size:.42rem;color:var(--t3);margin-top:2px">'+(r.lv7?'⭐ LV7 Bonus Paid':'🎯 Signed Up')+'</div></div>'
+          +'<div style="font-family:var(--fmono);font-size:.56rem;font-weight:700;color:var(--green)">+$'+((r.earned||4).toFixed(2))+'</div>';
+        el.appendChild(row);
+      });
+    }).catch(function(){el.innerHTML='<div class="empty">Error loading</div>';});
+}
+function submitRefCode(){
+  var input=document.getElementById('ref-input');if(!input)return;
+  var code=(input.value||'').trim().toUpperCase();
+  if(!code.startsWith('ZNC-')||code.length<8){toast('Invalid code format','error');return;}
+  if(!G.uid||!db){toast('Log in first','error');return;}
+  if(G.usedRefCode){toast('Already used a referral code','warn');return;}
+  if(code===getRefCode()){toast('Cannot use your own code','error');return;}
+  var suffix=code.replace('ZNC-','');
+  // Search all players for matching uid suffix
+  db.collection('players').get().then(function(snap){
+    var found=null;
+    snap.forEach(function(doc){if(!found&&doc.id.slice(-6).toUpperCase()===suffix)found=doc;});
+    if(!found){toast('Code not found','error');return;}
+    if(found.id===G.uid){toast('Cannot use your own code','error');return;}
+    var b=db.batch();
+    b.update(db.collection('players').doc(found.id),{bal:FS.FieldValue.increment(4),zenz:FS.FieldValue.increment(10),refEarned:FS.FieldValue.increment(4),refZenz:FS.FieldValue.increment(10),refCount:FS.FieldValue.increment(1)});
+    b.update(db.collection('players').doc(G.uid),{usedRefCode:code,referredBy:found.id});
+    b.set(db.collection('referrals').doc(),{referrerId:found.id,friendId:G.uid,friendName:G.name||'Player',code:code,earned:4,lv7:false,ts:FS.FieldValue.serverTimestamp()});
+    return b.commit();
+  }).then(function(){G.usedRefCode=code;toast('Applied! Your friend earned $4 + 10 ZENZ','success');renderPage();}).catch(function(e){if(e)toast('Error: '+(e.message||'unknown'),'error');});
+}
+(function(){
+  ZCS.restore();var _d=false;
+  window._retryNow=function(){window._hideOffline&&window._hideOffline();if(!_d)startAuth();else renderPage();};
+  function startAuth(){
+    window._hideOffline&&window._hideOffline();
+    if(typeof firebase==='undefined'){if(!window._fbT)window._fbT=0;window._fbT++;if(window._fbT>50){window._showOffline&&window._showOffline('Service unavailable.');return;}setTimeout(startAuth,30);return;}
+    if(!window.auth){try{if(!firebase.apps.length)firebase.initializeApp(window._FC||{});window.auth=firebase.auth();window.db=firebase.firestore();window.rtdb=firebase.database();window.FS=firebase.firestore;db=window.db;auth=window.auth;rtdb=window.rtdb;FS=window.FS;}catch(e){setTimeout(startAuth,50);return;}}
+    auth.onAuthStateChanged(function(u){if(_d)return;_d=true;if(u)G.uid=u.uid;if(G.uid&&!G.isGuest){db.collection('players').doc(G.uid).get().then(function(s){if(s.exists)Object.assign(G,s.data());boot();}).catch(function(){window._showOffline&&window._showOffline('Could not reach server.');});}else boot();},function(){window._showOffline&&window._showOffline('Connection error.');});
+    setTimeout(function(){if(!_d){_d=true;boot();}},6000);
+  }
+  function boot(){ZCS.sendReady('referral');setTimeout(renderPage,50);}
+  startAuth();
+})();
+</script>
+</body>
+</html>
